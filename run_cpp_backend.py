@@ -17,11 +17,14 @@ if not DN:
     DN = '.' # so that we always have an executable path like ./usercode.exe
 USER_PROGRAM = sys.argv[1] # string containing the program to be run
 LANG = sys.argv[2] # 'c' for C or 'cpp' for C++
+USER_INPUT = ""
 
-prettydump = False
+prettydump = ('--prettydump' in sys.argv)
+
 if len(sys.argv) > 3:
-    if sys.argv[3] == '--prettydump':
-        prettydump = True
+    thrid_argument_is_input = (sys.argv[3] != '--prettydump')
+    if thrid_argument_is_input:
+        USER_INPUT = sys.argv[3]
 
 
 if LANG == 'c':
@@ -66,7 +69,9 @@ if gcc_retcode == 0:
                         '--source-filename=' + FN,
                         '--trace-filename=' + VGTRACE_PATH,
                         EXE_PATH],
-                       stdout=PIPE, stderr=PIPE)
+                       stdout=PIPE, stderr=PIPE, stdin=PIPE)
+
+    valgrind_p.stdin.write(USER_INPUT)
     (valgrind_stdout, valgrind_stderr) = valgrind_p.communicate()
     valgrind_retcode = valgrind_p.returncode
 
