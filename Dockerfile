@@ -29,7 +29,7 @@ ADD . /tmp/opt-cpp-backend
 
 # we need to compile Valgrind from scratch within the container (hence
 # 'make clean' first) to make it work from within the container, ergh
-RUN cd /tmp/opt-cpp-backend/valgrind-3.11.0 && make clean && ./autogen.sh && ./configure --prefix=`pwd`/inst && make && make install
+RUN cd /tmp/opt-cpp-backend/valgrind-3.11.0  && ./autogen.sh && ./configure --prefix=`pwd`/inst && make && make install
 
 RUN useradd netuser
 
