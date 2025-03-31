@@ -50,7 +50,7 @@ Project page: <https://juezun.github.io/>
 
 [license_url]: https://github.com/JuezUN/opt-cpp-backend/blob/master/LICENSE
 [contributing_url]: https://github.com/JuezUN/opt-cpp-backend/blob/master/CONTRIBUTING.md
-[project_url]: https://github.com/orgs/JuezUN/projects/3
+[project_url]: https://github.com/JuezUN/INGInious/issues
 [python_tutor_repo_url]: https://github.com/JuezUN/OnlinePythonTutor
 [uncode_wiki_url]: https://github.com/JuezUN/INGInious/wiki
 [gitter_url]:https://gitter.im/uncode-unal/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
